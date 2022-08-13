@@ -1,10 +1,13 @@
-import { useContext } from "react"
+import { useContext} from "react"
 import { Alert, Button, Col, Row } from "react-bootstrap"
 import { ExpenseContext } from "../context/expenseContext"
 
 const BudgetInfo = () => {
-  const {budget} = useContext(ExpenseContext)
+  const {budget,expenses} = useContext(ExpenseContext)
 
+  const spent = expenses.reduce((total,item)=> total + item.cost,0);
+  const remaining = budget - spent;
+  
   return (
     <Row className=" justify-content-center">
         <Col lg={4}>
@@ -15,12 +18,12 @@ const BudgetInfo = () => {
         </Col>
         <Col lg={4}>
         <Alert variant="success" className="d-flex align-items-center">
-            <p>Remaining: $2000</p>
+            <p>Remaining: ${remaining}</p>
           </Alert>
         </Col>
         <Col lg={4}>
         <Alert variant="danger" className="d-flex align-items-center">
-            <p>Spent: $2000</p>
+            <p>Spent: ${spent}</p>
           </Alert>
         </Col>
     </Row>
