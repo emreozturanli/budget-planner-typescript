@@ -12,18 +12,18 @@ const BudgetInfo = () => {
     <Row className=" justify-content-center">
         <Col lg={4}>
           <Alert variant="primary" className="d-flex align-items-center">
-            <p>Budget: ${budget}</p>
+            <p className="mb-0">Budget: ${budget}</p>
             <Button className="ms-auto">Edit</Button>
           </Alert>
         </Col>
         <Col lg={4}>
         <Alert variant="success" className="d-flex align-items-center">
-            <p>Remaining: ${remaining}</p>
+            <p className="mb-0">Remaining: ${remaining}</p>
           </Alert>
         </Col>
         <Col lg={4}>
         <Alert variant="danger" className="d-flex align-items-center">
-            <p>Spent: ${spent}</p>
+            <p className="mb-0">Spent: ${spent}</p>
           </Alert>
         </Col>
     </Row>
