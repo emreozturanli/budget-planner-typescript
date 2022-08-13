@@ -1,7 +1,10 @@
+import { useContext } from "react"
 import { Form, ListGroup } from "react-bootstrap"
+import { ExpenseContext } from "../context/expenseContext"
 import SingleExpense from "./SingleExpense"
 
 const Expenses = () => {
+  const {expenses} = useContext(ExpenseContext)
   return (
     <>
     <Form.Control
@@ -11,10 +14,9 @@ const Expenses = () => {
               aria-label="Search"
             />
     <ListGroup className="my-3">
-      <SingleExpense/>
-      <SingleExpense/>
-      <SingleExpense/>
-      <SingleExpense/>
+      {
+        expenses.map(e=> <SingleExpense key={e.id} expense={e}/>)
+      }
     </ListGroup>
   </>
   )
