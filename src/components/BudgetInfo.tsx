@@ -11,7 +11,7 @@ const BudgetInfo = () => {
   const remaining = budget - spent;
 
   return (
-    <Row className=" justify-content-center">
+    <Row className=" justify-content-center align-items-stretch">
       <Col lg={4}>
         <Alert variant="primary" className="d-flex align-items-center">
           <Budget/>
@@ -19,12 +19,12 @@ const BudgetInfo = () => {
       </Col>
       <Col lg={4}>
         <Alert variant="success" className="d-flex align-items-center">
-          <p className="mb-0">Remaining: ${remaining}</p>
+          <p className="mb-0" style={{padding:'7px 0'}}>Remaining: ${remaining}</p>
         </Alert>
       </Col>
       <Col lg={4}>
         <Alert variant="danger" className="d-flex align-items-center">
-          <p className="mb-0">Spent: ${spent}</p>
+          <p className="mb-0" style={{padding:'7px 0'}}>Spent: ${spent}</p>
         </Alert>
       </Col>
     </Row>

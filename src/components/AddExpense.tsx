@@ -20,7 +20,7 @@ const AddExpense = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className='mb-3'>
       <Form.Group className="mb-3" controlId="expense">
         <Form.Label className="fw-semibold">Expense</Form.Label>
         <Form.Control
